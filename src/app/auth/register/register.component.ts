@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent {
   email: string = '';
   password: string = '';
+  confirmPass: string = '';
   fullName: string = '';
   companyName: string = '';
   role: string = '';
@@ -22,6 +23,7 @@ export class RegisterComponent {
     this.validationerr =(
       this.email &&
       this.password &&
+      this.confirmPass &&
       this.fullName &&
       this.companyName &&
       this.role)
@@ -30,6 +32,7 @@ export class RegisterComponent {
     if (
       this.email &&
       this.password &&
+      this.confirmPass &&
       this.fullName &&
       this.companyName &&
       this.role
@@ -37,6 +40,7 @@ export class RegisterComponent {
       this.authService.register(
         this.email,
         this.password,
+        this.confirmPass,
         this.fullName,
         this.companyName,
         this.role,

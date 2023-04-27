@@ -1,109 +1,45 @@
 <app-header></app-header>
-<div class="card shadow-sm p-4">
-  <div class="card-text">
-    <h2 class="fs-3">Register an Account</h2>
+<section>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+  <h2>Registration</h2>
+  <div class="content">
+    <div class="input-box">
+      <label for="fullName">Full Name</label>
+      <input type="text" placeholder="Enter Full name" [(ngModel)]="fullName" name="fullName"required>
+    </div>
+    <div class="input-box">
+      <label for="email">Email</label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="email" name="email" required>
+    </div>
+    <div class="input-box">
+      <label for="name">Password</label>
+      <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="Password" required>
+    </div>
+    <div class="input-box">
+      <label for="cpassword">Confirm Password</label>
+      <input type="password" placeholder="Enter Confirm Password" [(ngModel)]="confirmPass" name="confirmPassword" required>
+    </div>
+    <div class="input-box">
+      <label for="orgname">Organization Name</label>
+      <input type="text" placeholder="Enter org Name" [(ngModel)]="companyName" name="companyName" required>
+    </div>
+    <div class="input-box">
+      <label for="ERoll">Employement Role</label>
+      <input type="text" placeholder="Enter Roll" [(ngModel)]="role" name="role" required>
+    </div>
+    <div class="row" *ngIf="validationerr">
+      <h6 style="color:#fff">
+        Please enter valid information!
+      </h6>
+    </div>
+    <div class="alert">
+      <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+    </div>
+    <div class="button-container">
+      <button type="submit">Register</button>
+    </div>
   </div>
-  <br />
-  <div class="card-text">
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group mb-4 mb-4">
-        <div class="row">
-          <div class="col-3">
-            <label for="email" class="fs-6">Email</label>
-          </div>
-          <div class="col">
-            <input
-              type="email"
-              class="form-control form-control-sm"
-              id="email"
-              [(ngModel)]="email"
-              name="email"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <div class="form-group mb-4">
-        <div class="row">
-          <div class="col-3">
-            <label for="Password" class="fs-6">Password</label>
-          </div>
-          <div class="col">
-            <input
-              type="Password"
-              class="form-control form-control-sm"
-              id="Password"
-              [(ngModel)]="password"
-              name="Password"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <div class="form-group mb-4">
-        <div class="row">
-          <div class="col-3">
-            <label for="fullName" class="fs-6">fullName</label>
-          </div>
-          <div class="col">
-            <input
-              type="text"
-              class="form-control form-control-sm"
-              id="fullName"
-              [(ngModel)]="fullName"
-              name="fullName"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <div class="form-group mb-4">
-        <div class="row">
-          <div class="col-3">
-            <label for="companyName" class="fs-6">Company Name</label>
-          </div>
-          <div class="col">
-            <input
-              type="text"
-              class="form-control form-control-sm"
-              id="companyName"
-              [(ngModel)]="companyName"
-              name="companyName"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <div class="form-group mb-4">
-        <div class="row">
-          <div class="col-3">
-            <label for="role" class="fs-6">Employment role</label>
-          </div>
-          <div class="col">
-            <input
-              type="text"
-              class="form-control form-control-sm"
-              id="role"
-              [(ngModel)]="role"
-              name="role"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <div class="row" *ngIf="validationerr">
-        <h6 class="text-danger fw-100 mt-3">
-          Please enter valid information!
-        </h6>
-      </div>
-      <div class="form-group mt-4">
-        <button
-          class="btn btn-primary btn-sm ps-3 pe-3 pt-1 pb-1 fs-6"
-          type="submit"
-        >
-          Login
-        </button>
-      </div>
-    </form>
-  </div>
+  </form>
 </div>
+</section>

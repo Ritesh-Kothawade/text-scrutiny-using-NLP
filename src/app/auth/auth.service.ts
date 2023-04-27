@@ -35,6 +35,7 @@ export class AuthService {
   register(
     email: string,
     password: string,
+    confirmPass: string,
     fullName: string,
     companyName: string,
     role: string,
@@ -45,6 +46,7 @@ export class AuthService {
     users.push({
       email,
       password,
+      confirmPass,
       fullName,
       companyName,
       role,

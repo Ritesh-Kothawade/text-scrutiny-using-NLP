@@ -1,0 +1,46 @@
+.nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-image: url(./footer-bg-v3.jpg);
+}
+.headerclass{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.authbuttons{
+  padding: 5px;
+  margin-right: 20px;
+}
+
+.login{
+  background: #273239;
+  color: #fff;
+  margin: 0 10px 0 10px;
+}
+
+.login:hover{ 
+  background: coral;
+  color: #ffffff;
+}
+
+.register{
+  background: #273239;
+  color: #fff;
+}
+
+.register:hover {
+  background: coral;
+  color: #ffffff;
+}
+
+.logout-button{
+  padding: 3px;
+}
+
+.logout{
+  background: red;
+  color: #fff;
+}

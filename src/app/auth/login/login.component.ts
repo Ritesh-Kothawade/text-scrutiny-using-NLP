@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
+  // isEnabled?: boolean;
   
   validationerr?: boolean;
   constructor(private authService: AuthService, private router: Router) {}
@@ -26,5 +27,12 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/my-profile']);
       }
     }
+  }
+  clicked(){
+    window.alert("This functionality is in progress!!")
+  }
+
+  getTrueFalse() {
+    
   }
 }
