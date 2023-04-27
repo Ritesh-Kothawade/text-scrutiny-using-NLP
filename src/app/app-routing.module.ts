@@ -7,9 +7,11 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { VisualizerComponent } from './auth/visualizer/visualizer.component';
 import { AboutUsComponent } from './auth/about-us/about-us.component';
 import { ContactUsComponent } from './auth/contact-us/contact-us.component';
+import { HomePageComponent } from './home/home-page/home-page.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: HomePageComponent },
+  { path: 'home-page', component: HomePageComponent },
   { path: 'auth/register', component: RegisterComponent },
   { path: 'auth/login', component: LoginComponent },
   { path: 'visualizer', component: VisualizerComponent, canActivate:[AuthGuard]},

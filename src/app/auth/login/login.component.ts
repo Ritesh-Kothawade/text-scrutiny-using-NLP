@@ -10,7 +10,6 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
-  // isEnabled?: boolean;
   
   validationerr?: boolean;
   constructor(private authService: AuthService, private router: Router) {}
@@ -24,15 +23,12 @@ export class LoginComponent implements OnInit {
     
     if (this.email !== '' && this.password !== '') {
       if (this.authService.login(this.email, this.password)) {
-        this.router.navigate(['/my-profile']);
+        window.alert("Logged in Succesfully!!");
+        this.router.navigate(['/home-page']);
       }
     }
   }
   clicked(){
     window.alert("This functionality is in progress!!")
-  }
-
-  getTrueFalse() {
-    
   }
 }

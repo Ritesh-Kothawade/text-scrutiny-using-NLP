@@ -5,11 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
-import { HeaderComponent } from './auth/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
 
 @NgModule({
   declarations: [AppComponent],

@@ -92,10 +92,6 @@ body {
   margin: 12px 0;
 }
 
-#messageText {
-  height: 110px;
-}
-
 .right-side .input-box input,
 .right-side .input-box textarea {
   height: 100%;
@@ -107,6 +103,10 @@ body {
   border-radius: 6px;
   padding: 0 15px;
   resize: none;
+}
+
+#messagetext{
+  height: 110px;
 }
 
 .right-side .message-box {

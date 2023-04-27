@@ -46,6 +46,7 @@ export class RegisterComponent {
         this.role,
         this.isEmailVerified
       );
+      window.alert("Registration Successful!!")
       this.router.navigate(['/auth/login']);
     }
   }

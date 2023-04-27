@@ -10,7 +10,7 @@ export class SmsService {
   constructor(private http: HttpClient) { }
 
   sendSms(name: string, senderNumber: string, message: string) {
-    const authToken = '2c92d587503b974a4a1d3c7b3d10e80b'; // Twilio auth token
+    const authToken = '625e889e4748e387cd2eb3ff579e4c11'; // Twilio auth token
     const accountSid = 'ACe53bd4fa314d5befa209fa6c9898e27d'; // Twilio account SID
     const to = '+918378872641'; // receiver mobile number
     const from = '+16814024187';

@@ -64,6 +64,7 @@ h2 {
   border: 1px solid #ccc;
   outline: none;
   background: transparent;
+  color:#fff;
 }
 
 .input-box input:is(:focus,:valid){
@@ -80,6 +81,7 @@ h2 {
 
 .button-container{
   margin: 15px 0;
+  width: 100%;
 }
 .button-container button{
   width: 100%;

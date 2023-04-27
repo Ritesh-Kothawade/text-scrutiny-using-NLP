@@ -46,12 +46,9 @@
               placeholder="Enter your mobile number" [(ngModel)]="senderNumber">
           </div>
           <div class="input-box">
-            <textarea id="messageText" style="border:solid 1px rgb(60, 56, 56);" [ngModelOptions]="{standalone: true}"
-              placeholder="Enter your message" [(ngModel)]="message"></textarea>
+            <textarea id="messagetext" rows="4" placeholder="Enter Your Message" style="border:solid 1px rgb(60, 56, 56);" [ngModelOptions]="{standalone: true}" [(ngModel)]="message"></textarea>
           </div>
-          <div class="input-box message-box">
-
-          </div>
+          <div class="input-box"></div>
           <div class="button">
             <input type="button" value="Send Now" (click)="sendMessage()">
           </div>
