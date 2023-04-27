@@ -1,0 +1,27 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.imageback{
+    min-height: 89.9vh;
+    width: 100%;
+    background: url('./background6.jpg') no-repeat;
+    background-size: cover;
+}
+// .container {
+//   position: relative;
+//   text-align: center;
+//   background-position: center;
+//     background-size: cover;
+//   color: white;
+// }
+
+// .centered {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
