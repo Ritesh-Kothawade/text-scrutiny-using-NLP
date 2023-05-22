@@ -71,6 +71,27 @@ h2 {
   box-shadow: 0 3px 6px (0,0,0,0.2);
 }
 
+#fullName:valid{
+  border-color: green;
+}
+#fullName:focus:invalid{
+  border-color: red;
+}
+
+#emailAddress:valid {
+  border-color: green;
+}
+#emailAddress:focus:invalid {
+  border-color: red;
+}
+
+#passwordfield:valid {
+  border-color: green;
+}
+#passwordfield:focus:invalid {
+  border-color: red;
+}
+
 .alert{
   font-size: 14px;
   font-style: italic;
