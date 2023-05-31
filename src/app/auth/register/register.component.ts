@@ -18,11 +18,25 @@ export class RegisterComponent implements OnInit {
   isEmailVerified: boolean = true;
   validationerr?: boolean;
   registerForm: any;
+  emailEntered = false;
+  emailValid = false;
+  passwordValid = false;
+  passwordEntered = false;
   
 
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
+  }
+
+  checkEmailValidity(){
+    this.emailEntered = true;
+    this.emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.email);
+  }
+  
+  checkPasswordValidity(){
+    this.passwordEntered = true;
+    this.passwordValid = /^.{8,}$/.test(this.password);
   }
 
   onSubmit(): void {
@@ -56,6 +70,7 @@ export class RegisterComponent implements OnInit {
         this.validationerr = false
       
       }
+      
       console.log("true")
       window.alert("Registration Successful!!")      
       this.router.navigate(['/auth/login']);

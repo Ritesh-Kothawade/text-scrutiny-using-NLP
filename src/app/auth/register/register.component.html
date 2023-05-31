@@ -1,45 +1,64 @@
 <app-header></app-header>
 <section>
-<div class="container">
-  <form (ngSubmit)="onSubmit()">
-  <h2>Registration</h2>
-  <div class="content">
-    <div class="input-box">
-      <label for="fullName">Full Name</label>
-      <input id="fullName" type="text" placeholder="Enter Full name" [(ngModel)]="fullName" name="fullName" required pattern="^[a-zA-Z]+ [a-zA-Z]+$">
-    </div>
-    <div class="input-box">
-      <label for="email">Email</label>
-      <input id="emailAddress" type="text" placeholder="Enter Email" [(ngModel)]="email" name="email" required>
-    </div>
-    <div class="input-box">
-      <label for="name">Password</label>
-      <input id="passwordfield" type="password" placeholder="Enter Password" [(ngModel)]="password" name="Password" required>
-    </div>
-    <div class="input-box">
-      <label for="cpassword">Confirm Password</label>
-      <input type="password" placeholder="Enter Confirm Password" [(ngModel)]="confirmPass" name="confirmPassword" required>
-    </div>
-    <div class="input-box">
-      <label for="orgname">Organization Name</label>
-      <input type="text" placeholder="Enter org Name" [(ngModel)]="companyName" name="companyName" required>
-    </div>
-    <div class="input-box">
-      <label for="ERoll">Employement Role</label>
-      <input type="text" placeholder="Enter Roll" [(ngModel)]="role" name="role" required>
-    </div>
-    <div class="row" *ngIf="validationerr">
-      <h6 style="color:#fff">
-        Please enter valid information!
-      </h6>
-    </div>
-    <div class="alert">
-      <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
-    </div>
-    <div class="button-container">
-      <button type="submit">Register</button>
-    </div>
+  <div class="container">
+    <form (ngSubmit)="onSubmit()">
+      <h2>Registration</h2>
+      <div class="content">
+        <div class="input-box">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" type="text" placeholder="Enter Full name" [(ngModel)]="fullName" name="fullName" required
+            >
+        </div>
+        <div class="input-box">
+          <label for="email">Email</label>
+          <input id="email" type="text" placeholder="Enter Email" [(ngModel)]="email" name="email" required
+            (input)="checkEmailValidity()" [style.border-color]="emailEntered && emailValid ? 'green' : (emailEntered && !emailValid ? 'red' : '')">
+        </div>
+        <div class="input-box">
+          <label for="name">Password</label>
+          <input id="passwordfield" type="password" placeholder="Enter Password" [(ngModel)]="password" name="Password"
+            required (input)="checkPasswordValidity()" [style.border-color]="passwordEntered && passwordValid ? 'green' : (passwordEntered && !passwordValid ? 'red' : '')">
+        </div>
+        <div class="input-box">
+          <label for="cpassword">Confirm Password</label>
+          <input type="password" placeholder="Enter Confirm Password" [(ngModel)]="confirmPass" name="confirmPassword"
+            required [style.border-color]="(password === confirmPass) ? 'green' : (!(password === confirmPass) ? 'red' : '')">
+        </div>
+        <div class="input-box">
+          <label for="orgname">Organization Name</label>
+          <input type="text" placeholder="Enter org Name" [(ngModel)]="companyName" name="companyName" required>
+        </div>
+        <div class="input-box">
+          <label for="ERoll">Employment Role</label>
+          <select class="dropdownlist" [(ngModel)]="role" name="role" id="role" required>
+            <option value="manager" selected>Manager</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="employee">Employee</option>
+            <option value="intern">Intern</option>
+            <option value="developer">Developer</option>
+            <option value="analyst">Analyst</option>
+            <option value="consultant">Consultant</option>
+            <option value="designer">Designer</option>
+            <option value="administrator">Administrator</option>
+            <option value="executive">Executive</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+
+
+        <div class="row" *ngIf="validationerr">
+          <h6 style="color:#fff">
+            Please enter valid information!
+          </h6>
+        </div>
+        <div class="alert">
+          <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS
+            notifications from us and can opt out at any time.</p>
+        </div>
+        <div class="button-container">
+          <button type="submit" [disabled]="!emailValid || !passwordValid || !(password === confirmPass)">Register</button>
+        </div>
+      </div>
+    </form>
   </div>
-  </form>
-</div>
 </section>

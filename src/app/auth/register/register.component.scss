@@ -16,6 +16,7 @@ section {
   background-size: cover;
 }
 
+
 .container{ 
   max-width: 650px;
   padding: 28px;
@@ -71,25 +72,19 @@ h2 {
   box-shadow: 0 3px 6px (0,0,0,0.2);
 }
 
-#fullName:valid{
-  border-color: green;
-}
-#fullName:focus:invalid{
-  border-color: red;
-}
-
-#emailAddress:valid {
-  border-color: green;
-}
-#emailAddress:focus:invalid {
-  border-color: red;
+.dropdownlist{
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: transparent;
+  color: #fff;
 }
 
-#passwordfield:valid {
-  border-color: green;
-}
-#passwordfield:focus:invalid {
-  border-color: red;
+.dropdownlist option{
+  color: black;
 }
 
 .alert{

@@ -43,14 +43,15 @@
           </div>
           <div class="input-box">
             <input type="text" style="border:solid 1px rgb(60, 56, 56);" [ngModelOptions]="{standalone: true}"
-              placeholder="Enter your mobile number" [(ngModel)]="senderNumber">
+              placeholder="Enter your mobile number" [(ngModel)]="senderNumber" (input)="checkMobileValidity()"
+              [style.border-color]="mobileEntered && mobileValid ? 'green' : (mobileEntered && !mobileValid ? 'red' : '')">>
           </div>
           <div class="input-box">
             <textarea id="messagetext" rows="4" placeholder="Enter Your Message" style="border:solid 1px rgb(60, 56, 56);" [ngModelOptions]="{standalone: true}" [(ngModel)]="message"></textarea>
           </div>
           <div class="input-box"></div>
           <div class="button">
-            <input type="button" value="Send Now" (click)="sendMessage()">
+            <button type="button" class="SendNowButton btn btn-primary btn-lg" (click)="sendMessage()" [disabled]="!mobileValid"> Send Now </button>
           </div>
         </form>
       </div>

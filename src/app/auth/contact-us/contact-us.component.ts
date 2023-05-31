@@ -10,8 +10,14 @@ export class ContactUsComponent {
     customerName: string = "";
     message: string = "";
     senderNumber: string = "";
-
+    mobileEntered = false;
+    mobileValid = false;
     constructor(private smsService: SmsService) {}
+
+    checkMobileValidity(){
+      this.mobileEntered = true;
+      this.mobileValid = /^\d{10}$/.test(this.senderNumber);
+    }
 
   sendMessage() {
     this.smsService.sendSms(this.customerName, this.senderNumber, this.message).subscribe(() => {

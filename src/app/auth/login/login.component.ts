@@ -9,6 +9,8 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   email: string = '';
+  emailEntered = false;
+  emailValid = false;
   password: string = '';
   
   validationerr?: boolean;
@@ -30,5 +32,10 @@ export class LoginComponent implements OnInit {
   }
   clicked(){
     window.alert("This functionality is in progress!!")
+  }
+
+  checkEmailValidity(){
+    this.emailEntered = true;
+    this.emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.email);
   }
 }
